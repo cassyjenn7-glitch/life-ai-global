@@ -801,26 +801,164 @@ document.addEventListener("keydown", function(event) {
 
 document.getElementById("year").textContent = new Date().getFullYear();
   
+
 const languageSelect = document.getElementById("languageSelect");
 
 const translations = {
   en: {
     nav: ["Home", "Our Services", "About Us", "Trust & Safety", "Contact"],
     explore: "Explore LIFE AI",
-    eyebrow: "Healthcare Intelligence for Humanity",
-    heroTitle: "A Healthier World Through <span>Responsible AI.</span>",
-    heroText: "Making reliable health information, prevention support and healthcare innovation more accessible to people everywhere.",
-    heroButton: "Explore Our Services",
-    missionButton: "Discover Our Mission"
+    hero: [
+      "Healthcare Intelligence for Humanity",
+      "A Healthier World Through Responsible AI.",
+      "Making reliable health information, prevention support and healthcare innovation more accessible to people everywhere.",
+      "Explore Our Services",
+      "Discover Our Mission",
+      "Healthcare Without Borders"
+    ],
+    services: [
+      "One Platform. A World of Possibilities.",
+      "Discover LIFE AI Global",
+      "An integrated healthcare intelligence platform designed to support individuals, healthcare professionals and researchers."
+    ],
+    cards: [
+      ["LIFE Health Assistant", "Accessible health information and general wellness guidance to help people make informed decisions."],
+      ["LIFE Prevention", "Health education, preventive awareness and tools that encourage healthier communities."],
+      ["LIFE Emergency", "Emergency awareness and guidance to help people understand urgent situations and seek appropriate care."],
+      ["LIFE Patient", "A planned patient-support environment for health information, care organization and patient engagement."],
+      ["LIFE Doctor", "Planned digital tools and information resources to support healthcare professionals."],
+      ["LIFE Research", "A vision for responsible AI-assisted medical research, knowledge discovery and scientific collaboration."],
+      ["LIFE Global", "Connecting health knowledge and innovation across communities, languages and countries."]
+    ],
+    learn: "Learn more →",
+    mission: [
+      "Our Vision",
+      "Healthcare Intelligence for Humanity.",
+      "We envision a world where access to trustworthy health information and responsible healthcare innovation is not limited by geography, language or economic circumstances.",
+      "Who We Are",
+      "Technology With a Human Purpose.",
+      "LIFE AI Global is being developed as a global healthcare and artificial intelligence initiative. Our mission is to support disease prevention, improve access to health information and contribute to responsible medical research.",
+      "Accessible essential health information",
+      "Responsible and evidence-informed AI",
+      "Human oversight and professional collaboration",
+      "Global inclusion and multilingual access"
+    ],
+    safety: [
+      "Our Commitments",
+      "Trust, Safety and Responsibility",
+      "Healthcare technology must put people first. Safety and accountability are central to our development.",
+      ["🔒 Privacy First", "We aim to build with strong privacy protections, appropriate consent and secure handling of personal information."],
+      ["👩‍⚕️ Human Oversight", "AI is intended to support, not replace, qualified healthcare professionals and clinical judgment."],
+      ["📚 Evidence Matters", "Health information should be carefully reviewed, responsibly presented and updated as evidence evolves."]
+    ],
+    emergency: [
+      "Medical Emergency Notice",
+      "LIFE AI Global is not an emergency dispatch service. If you believe someone is experiencing a medical emergency, contact your local emergency services or go to the nearest emergency department immediately. Do not delay urgent care while using this website."
+    ],
+    contact: [
+      "Our Global Mission",
+      "A Better Future for Global Health.",
+      "From accessible health education to responsible research innovation, LIFE AI Global is being built around one belief: technology should serve humanity.",
+      "Contact LIFE AI Global",
+      "The email address above is a proposed contact address and must be configured before launch."
+    ],
+    footer: [
+      "Healthcare Intelligence for Humanity. Building toward a world where responsible AI supports healthier communities.",
+      "Explore",
+      ["Home", "Our Services", "About Us", "Trust & Safety"],
+      "Our Principles",
+      ["Privacy", "Responsible AI", "Human Oversight", "Contact"],
+      "Healthcare information on this website is not a substitute for professional medical advice."
+    ],
+    modal: [
+      ["Our vision is to provide accessible, responsible health information and general wellness guidance. It will not replace a qualified healthcare professional or provide a definitive medical diagnosis."],
+      ["Our prevention initiative aims to make health education and preventive awareness more accessible, helping individuals and communities make informed health choices."],
+      ["Our emergency initiative is planned to provide safety information and guidance. It is not an emergency dispatch service. Always contact local emergency services in an emergency."],
+      ["A planned patient-support environment designed around accessible health information, patient engagement, privacy and better organization of care."],
+      ["A planned professional platform intended to support healthcare workers with responsible digital tools, reliable information and appropriate human oversight."],
+      ["A planned research initiative exploring responsible AI-assisted scientific discovery and collaboration with qualified researchers."],
+      ["Our global vision is to make responsible healthcare information and innovation more accessible across countries, languages and communities."]
+    ],
+    modalNotice: "This service is part of the LIFE AI Global development vision. Availability and functionality will be announced as features are built, tested and approved.",
+    close: "Close"
   },
+
   fr: {
     nav: ["Accueil", "Nos services", "À propos", "Confiance et sécurité", "Contact"],
     explore: "Découvrir LIFE AI",
-    eyebrow: "L'intelligence médicale au service de l'humanité",
-    heroTitle: "Un monde en meilleure santé grâce à <span>l'IA responsable.</span>",
-    heroText: "Rendre les informations de santé fiables, la prévention et l'innovation médicale plus accessibles à tous.",
-    heroButton: "Découvrir nos services",
-    missionButton: "Découvrir notre mission"
+    hero: [
+      "L'intelligence médicale au service de l'humanité",
+      "Un monde en meilleure santé grâce à l'IA responsable.",
+      "Rendre les informations de santé fiables, la prévention et l'innovation médicale plus accessibles à tous.",
+      "Découvrir nos services",
+      "Découvrir notre mission",
+      "La santé sans frontières"
+    ],
+    services: [
+      "Une plateforme. Un monde de possibilités.",
+      "Découvrez LIFE AI Global",
+      "Une plateforme intégrée d'intelligence médicale conçue pour accompagner les particuliers, les professionnels de santé et les chercheurs."
+    ],
+    cards: [
+      ["Assistant de santé LIFE", "Des informations de santé accessibles et des conseils généraux de bien-être pour aider chacun à prendre des décisions éclairées."],
+      ["LIFE Prévention", "L'éducation à la santé, la sensibilisation à la prévention et des outils pour favoriser des communautés en meilleure santé."],
+      ["LIFE Urgence", "Des informations et conseils pour reconnaître les situations urgentes et rechercher les soins appropriés."],
+      ["LIFE Patient", "Un environnement prévu pour accompagner les patients dans l'accès aux informations de santé et l'organisation de leurs soins."],
+      ["LIFE Médecin", "Des outils numériques et des ressources d'information prévus pour accompagner les professionnels de santé."],
+      ["LIFE Recherche", "Une initiative visant à soutenir la recherche médicale responsable grâce à l'intelligence artificielle et à la collaboration scientifique."],
+      ["LIFE Global", "Relier les connaissances et les innovations en santé entre les communautés, les langues et les pays."]
+    ],
+    learn: "En savoir plus →",
+    mission: [
+      "Notre vision",
+      "L'intelligence médicale au service de l'humanité.",
+      "Nous imaginons un monde où l'accès à des informations de santé fiables et à une innovation médicale responsable n'est limité ni par la géographie, ni par la langue, ni par les moyens économiques.",
+      "Qui sommes-nous ?",
+      "La technologie au service de l'humanité.",
+      "LIFE AI Global est en cours de développement en tant qu'initiative mondiale dans les domaines de la santé et de l'intelligence artificielle. Notre mission est de soutenir la prévention des maladies, d'améliorer l'accès aux informations de santé et de contribuer à une recherche médicale responsable.",
+      "Des informations essentielles sur la santé accessibles à tous",
+      "Une IA responsable fondée sur des données probantes",
+      "Une supervision humaine et une collaboration professionnelle",
+      "Une inclusion mondiale et un accès multilingue"
+    ],
+    safety: [
+      "Nos engagements",
+      "Confiance, sécurité et responsabilité",
+      "La technologie de santé doit placer les personnes au premier plan. La sécurité et la responsabilité sont au cœur de notre développement.",
+      ["🔒 La confidentialité avant tout", "Nous souhaitons mettre en place des protections solides de la vie privée, un consentement approprié et une gestion sécurisée des informations personnelles."],
+      ["👩‍⚕️ Supervision humaine", "L'IA doit accompagner les professionnels de santé qualifiés, et non les remplacer ni se substituer à leur jugement clinique."],
+      ["📚 La qualité des preuves compte", "Les informations de santé doivent être soigneusement vérifiées, présentées de manière responsable et actualisées selon l'évolution des connaissances."]
+    ],
+    emergency: [
+      "Avis concernant les urgences médicales",
+      "LIFE AI Global n'est pas un service de répartition des urgences. Si vous pensez qu'une personne présente une urgence médicale, contactez les services d'urgence locaux ou rendez-vous immédiatement au service des urgences le plus proche. Ne retardez pas des soins urgents pour utiliser ce site."
+    ],
+    contact: [
+      "Notre mission mondiale",
+      "Un avenir meilleur pour la santé mondiale.",
+      "De l'éducation à la santé accessible à l'innovation responsable en recherche, LIFE AI Global repose sur une conviction : la technologie doit servir l'humanité.",
+      "Contacter LIFE AI Global",
+      "L'adresse e-mail ci-dessus est une adresse proposée qui doit être configurée avant le lancement."
+    ],
+    footer: [
+      "L'intelligence médicale au service de l'humanité. Nous construisons un monde où l'IA responsable contribue à des communautés en meilleure santé.",
+      "Découvrir",
+      ["Accueil", "Nos services", "À propos", "Confiance et sécurité"],
+      "Nos principes",
+      ["Confidentialité", "IA responsable", "Supervision humaine", "Contact"],
+      "Les informations de santé présentées sur ce site ne remplacent pas les conseils d'un professionnel de santé."
+    ],
+    modal: [
+      ["Notre vision est de fournir des informations de santé accessibles et responsables ainsi que des conseils généraux de bien-être. Ce service ne remplacera pas un professionnel de santé qualifié et ne fournira pas de diagnostic médical définitif."],
+      ["Notre initiative de prévention vise à rendre l'éducation à la santé et la sensibilisation à la prévention plus accessibles afin d'aider les individus et les communautés à faire des choix éclairés."],
+      ["Notre initiative d'urgence prévoit de fournir des informations et des conseils de sécurité. Il ne s'agit pas d'un service de répartition des urgences. En cas d'urgence, contactez toujours les services d'urgence locaux."],
+      ["Un environnement prévu pour accompagner les patients grâce à des informations de santé accessibles, à la participation des patients, à la confidentialité et à une meilleure organisation des soins."],
+      ["Une plateforme professionnelle prévue pour accompagner les professionnels de santé avec des outils numériques responsables, des informations fiables et une supervision humaine appropriée."],
+      ["Une initiative de recherche prévue pour explorer la découverte scientifique assistée par une IA responsable et la collaboration avec des chercheurs qualifiés."],
+      ["Notre vision mondiale consiste à rendre les informations et les innovations responsables en santé plus accessibles dans tous les pays, toutes les langues et toutes les communautés."]
+    ],
+    modalNotice: "Ce service fait partie du projet de développement de LIFE AI Global. Sa disponibilité et ses fonctionnalités seront annoncées au fur et à mesure de leur création, de leurs tests et de leur validation.",
+    close: "Fermer"
   }
 };
 
@@ -830,19 +968,94 @@ function changeLanguage(language) {
 
   document.documentElement.lang = language;
 
-  const navItems = document.querySelectorAll("#navLinks a");
-  navItems.forEach((item, index) => {
-    if (t.nav[index]) item.textContent = t.nav[index];
+  document.querySelectorAll("#navLinks a").forEach((el, i) => {
+    el.textContent = t.nav[i];
   });
 
   document.querySelector(".nav-button").textContent = t.explore;
-  document.querySelector(".hero .eyebrow").textContent = t.eyebrow;
-  document.querySelector(".hero h1").innerHTML = t.heroTitle;
-  document.querySelector(".hero p").textContent = t.heroText;
 
-  const heroButtons = document.querySelectorAll(".hero-actions a");
-  heroButtons[0].textContent = t.heroButton;
-  heroButtons[1].textContent = t.missionButton;
+  const hero = document.querySelector(".hero");
+  hero.querySelector(".eyebrow").textContent = t.hero[0];
+  hero.querySelector("h1").textContent = t.hero[1];
+  hero.querySelector("p").textContent = t.hero[2];
+  hero.querySelectorAll(".hero-actions a")[0].textContent = t.hero[3];
+  hero.querySelectorAll(".hero-actions a")[1].textContent = t.hero[4];
+  hero.querySelector(".globe-label").textContent = t.hero[5];
+
+  const serviceSection = document.querySelector(".services");
+  const serviceHeading = serviceSection.querySelector(".section-heading");
+  serviceHeading.querySelector(".eyebrow").textContent = t.services[0];
+  serviceHeading.querySelector("h2").textContent = t.services[1];
+  serviceHeading.querySelector("p").textContent = t.services[2];
+
+  document.querySelectorAll(".service-card").forEach((card, i) => {
+    card.querySelector("h3").textContent = t.cards[i][0];
+    card.querySelector("p").textContent = t.cards[i][1];
+    card.querySelector(".learn-link").textContent = t.learn;
+  });
+
+  const mission = document.querySelector("#about");
+  const missionPanel = mission.querySelector(".mission-panel");
+  missionPanel.querySelector(".eyebrow").textContent = t.mission[0];
+  missionPanel.querySelector("h3").textContent = t.mission[1];
+  missionPanel.querySelector("p").textContent = t.mission[2];
+
+  const missionContent = mission.querySelector(".mission-content");
+  missionContent.querySelector(".eyebrow").textContent = t.mission[3];
+  missionContent.querySelector("h2").textContent = t.mission[4];
+  missionContent.querySelector("p").textContent = t.mission[5];
+
+  missionContent.querySelectorAll(".value span:last-child").forEach((el, i) => {
+    el.textContent = t.mission[6 + i];
+  });
+
+  const safety = document.querySelector("#safety");
+  const safetyHeading = safety.querySelector(".section-heading");
+  safetyHeading.querySelector(".eyebrow").textContent = t.safety[0];
+  safetyHeading.querySelector("h2").textContent = t.safety[1];
+  safetyHeading.querySelector("p").textContent = t.safety[2];
+
+  safety.querySelectorAll(".safety-item").forEach((item, i) => {
+    item.querySelector("h3").textContent = t.safety[3 + i][0];
+    item.querySelector("p").textContent = t.safety[3 + i][1];
+  });
+
+  const emergency = document.querySelector(".emergency");
+  emergency.querySelector("h3").textContent = t.emergency[0];
+  emergency.querySelector("p").textContent = t.emergency[1];
+
+  const contact = document.querySelector("#contact");
+  const contactHeading = contact.querySelector(".section-heading");
+  contactHeading.querySelector(".eyebrow").textContent = t.contact[0];
+  contactHeading.querySelector("h2").textContent = t.contact[1];
+  contactHeading.querySelector("p").textContent = t.contact[2];
+  contact.querySelector(".primary-button").textContent = t.contact[3];
+  contact.querySelector("p[style]").textContent = t.contact[4];
+
+  const footer = document.querySelector("footer");
+  const footerColumns = footer.querySelectorAll(".footer-grid > div");
+  footerColumns[0].querySelector("p").textContent = t.footer[0];
+  footerColumns[1].querySelector("h3").textContent = t.footer[1];
+  footerColumns[2].querySelector("h3").textContent = t.footer[3];
+
+  footerColumns[1].querySelectorAll(".footer-links a").forEach((el, i) => {
+    el.textContent = t.footer[2][i];
+  });
+  footerColumns[2].querySelectorAll(".footer-links a").forEach((el, i) => {
+    el.textContent = t.footer[4][i];
+  });
+
+  footer.querySelector(".copyright").lastChild.textContent = " " + t.footer[5];
+
+  document.getElementById("modalDone").textContent = t.close;
+  document.getElementById("closeModal").setAttribute("aria-label", t.close);
+
+  Object.keys(services).forEach((key, i) => {
+    services[key].description = t.modal[i][0];
+  });
+
+  const notice = document.querySelector(".modal-content p[style]");
+  notice.textContent = t.modalNotice;
 }
 
 if (languageSelect) {
