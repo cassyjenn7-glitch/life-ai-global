@@ -58,6 +58,18 @@ header {
   font-weight:800;
 }
 .logo-icon {
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  background:linear-gradient(135deg,#0874df,#16d9cb);
+  font-size:25px;
+  box-shadow:0 4px 14px rgba(8,116,223,.25);
+  border:2px solid #16d9cb;
+}
   width:42px;
   height:42px;
   border-radius:13px;
@@ -390,9 +402,11 @@ footer a:hover {color:var(--cyan)}
 <header>
   <div class="container nav">
     <a href="#home" class="logo">
-      <span class="logo-icon">✚</span>
-      <span>LIFE <span>AI</span> GLOBAL</span>
-    </a>
+  <span class="logo-icon" aria-hidden="true">
+    🌍✚
+  </span>
+  <span>LIFE <span>AI</span> GLOBAL</span>
+</a>
 
     <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
 
