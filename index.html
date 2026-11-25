@@ -418,7 +418,13 @@ footer a:hover {color:var(--cyan)}
       <a href="#contact">Contact</a>
     </nav>
 
-    <a href="#services" class="nav-button">Explore LIFE AI</a>
+<select id="languageSelect" aria-label="Select language"
+  style="padding:10px;border:1px solid #dce5f0;border-radius:8px;color:#062b63;background:white;font-weight:600;">
+  <option value="en">🇬🇧 English</option>
+  <option value="fr">🇫🇷 Français</option>
+</select>
+
+<a href="#services" class="nav-button">Explore LIFE AI</a>
   </div>
 </header>
 
@@ -794,6 +800,57 @@ document.addEventListener("keydown", function(event) {
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
+  
+const languageSelect = document.getElementById("languageSelect");
+
+const translations = {
+  en: {
+    nav: ["Home", "Our Services", "About Us", "Trust & Safety", "Contact"],
+    explore: "Explore LIFE AI",
+    eyebrow: "Healthcare Intelligence for Humanity",
+    heroTitle: "A Healthier World Through <span>Responsible AI.</span>",
+    heroText: "Making reliable health information, prevention support and healthcare innovation more accessible to people everywhere.",
+    heroButton: "Explore Our Services",
+    missionButton: "Discover Our Mission"
+  },
+  fr: {
+    nav: ["Accueil", "Nos services", "À propos", "Confiance et sécurité", "Contact"],
+    explore: "Découvrir LIFE AI",
+    eyebrow: "L'intelligence médicale au service de l'humanité",
+    heroTitle: "Un monde en meilleure santé grâce à <span>l'IA responsable.</span>",
+    heroText: "Rendre les informations de santé fiables, la prévention et l'innovation médicale plus accessibles à tous.",
+    heroButton: "Découvrir nos services",
+    missionButton: "Découvrir notre mission"
+  }
+};
+
+function changeLanguage(language) {
+  const t = translations[language];
+  if (!t) return;
+
+  document.documentElement.lang = language;
+
+  const navItems = document.querySelectorAll("#navLinks a");
+  navItems.forEach((item, index) => {
+    if (t.nav[index]) item.textContent = t.nav[index];
+  });
+
+  document.querySelector(".nav-button").textContent = t.explore;
+  document.querySelector(".hero .eyebrow").textContent = t.eyebrow;
+  document.querySelector(".hero h1").innerHTML = t.heroTitle;
+  document.querySelector(".hero p").textContent = t.heroText;
+
+  const heroButtons = document.querySelectorAll(".hero-actions a");
+  heroButtons[0].textContent = t.heroButton;
+  heroButtons[1].textContent = t.missionButton;
+}
+
+if (languageSelect) {
+  languageSelect.addEventListener("change", function() {
+    changeLanguage(this.value);
+  });
+}
+
 </script>
 
 </body>
